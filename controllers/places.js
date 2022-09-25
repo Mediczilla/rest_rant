@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
         res.render('places/show')
       }
 
-    res.render('places/show', { place: places[id] })
+    res.render('places/show', { place: places[id], id })
 })
 module.exports = router
 
