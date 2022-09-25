@@ -12,14 +12,14 @@ router.get('/', (req, res) => {
         state: 'WA',
         cuisines: 'Thai, Pan-Asian',
         pic: 'images/tacos.jpg'
-      }, {
+    }, {
         name: 'Coding Cat Cafe',
         city: 'Phoenix',
         state: 'AZ',
         cuisines: 'Coffee, Bakery',
         pic: 'images/tacos.jpg'
-    }]      
-    res.render('places/index', {places})
+    }]
+    res.render('places/index', { places })
 })
 
 module.exports = router
