@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
 })
 
 // GET /places
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
     let places = [{
         name: 'H-Thai-ML',
         city: 'Seattle',
@@ -19,7 +19,20 @@ router.get('/', (req, res) => {
           cuisines: 'Coffee, Bakery',
           pic: "\images\cats-coffee.jpg"
       }]   
-    res.render('places/index', { places })
-})
+      //unsure of placement
+      let id = Number(req.params.id)
+      if (isNaN(id)) {
+        res.render('error404')
+      }
+      else {
+        res.render('places/show')
+      }
 
+    res.render('places/show', { place: places[id] })
+})
 module.exports = router
+
+
+
+
+  
